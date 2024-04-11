@@ -6,17 +6,18 @@ const useWallet = () => {
     
     const { connect: _connect } = useConnect();   
     const connect = useCallback( () => _connect({ connector : injected()}))
+
     const { address, chain } = useAccount();
     const isConnected = useMemo( () => !!address, [address]);
-    const {disconnect} = useDisconnect();
 
-    console.log(chain?.name)
+    const {disconnect} = useDisconnect();
 
     return {
         connect,
         address,
         isConnected,
-        disconnect
+        disconnect,
+        chain
     }
 }
 
