@@ -21,7 +21,7 @@ function Example() {
                             Wallet Address : {address}
                         </span>
                         : 
-                        <button className="border-white border-2 p-2 rounded-xl" onClick={ () => connect( { connector : metaMask() })} >
+                        <button className="border-white border-2 p-2 rounded-xl" onClick={ () => connect()} >
                             🔌 Connect with MetaMask
                         </button>
                 }
@@ -40,7 +40,7 @@ function Example() {
                         </span>
                 }
             </div>
-            
+
         </div>
     )
 }
