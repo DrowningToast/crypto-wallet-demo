@@ -5,7 +5,7 @@ import { injected } from "wagmi/connectors";
 const useWallet = () => {
     
     const { connect: _connect } = useConnect();   
-    const connect = useCallback( () => _connect({ connector : injected()}))
+    const connect = useCallback( () => _connect({ connector : injected()}), [])
 
     const { address, chain } = useAccount();
     const isConnected = useMemo( () => !!address, [address]);

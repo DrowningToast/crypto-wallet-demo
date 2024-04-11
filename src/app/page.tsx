@@ -1,13 +1,12 @@
 'use client'
 
-import { useAccount, useConnect } from "wagmi"
-import { config } from "../config"
-import { metaMask } from "wagmi/connectors";
 import { useWallet } from "./hooks";
+import PriceDisplay from "./PriceDisplay";
 
 function Example() {
 
     const { connect, isConnected, disconnect, address, chain } = useWallet()
+    
 
     return (
         <div className="flex flex-col gap-y-4 items-center p-8">
@@ -33,6 +32,7 @@ function Example() {
                             <span>
                                 Currently on <span className="font-semibold">{chain?.name}</span>
                             </span>
+                            <PriceDisplay />
                             <button className="border-white border-2 p-1 rounded-xl" onClick={ () => disconnect() }>
                                 ❌ Disconnect my wallet
                             </button>
