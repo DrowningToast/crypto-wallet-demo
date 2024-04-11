@@ -30,7 +30,7 @@ function Example() {
                     isConnected ?
                         <div className="flex flex-col items-center gap-y-2">
                             <span>
-                                Currently on <span className="font-semibold">{chain?.name}</span>
+                                Currently on <span className="font-semibold">{chain?.name ?? "Unknown chain"}</span>
                             </span>
                             <PriceDisplay />
                             <button className="border-white border-2 p-1 rounded-xl" onClick={ () => disconnect() }>

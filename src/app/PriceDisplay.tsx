@@ -7,7 +7,7 @@ const PriceDisplay: FC = () => {
 
     const { price, chain, isLoading} = useAggregator()
 
-    if (!chain) return "Error: current chain not found"
+    if (!chain) return "Error: current chain not found, or unsupported chain is being used"
 
     return (
         <div className="flex flex-col gap-y-1">
